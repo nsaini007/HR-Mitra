@@ -1,0 +1,12 @@
+<h1><%=@title_text%></h1>
+<p><%=@subtitle_text%></p>
+
+<!-- ways to write link_to -->
+<%#= link_to 'About-us', "about" %> 
+<%#= link_to 'About-us', about_path %>
+<%#= link_to nil, about_path %> 
+<%#= link_to "About-us", controller: :pages, action: :about_us%>
+<%#= link_to "About-us", controller: 'pages', action: 'about_us'%>
+<%#= link_to 'About-us', about_path, target: "_blank", data: { name: "about", resource: "about-resource"} %>
+
+<%= render "shared/links" %>
