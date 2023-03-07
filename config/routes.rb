@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   get 'contact' => "pages#contact_us"
   get 'privacy-policy', to: "pages#privacy_policy"
   get 'terms-and-conditions', to: "pages#terms_and_conditions"
+
+  resources :employees
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -2,12 +2,21 @@ class Employee < ApplicationRecord
     validates :first_name, :last_name, presence: true
     validates :personal_email, presence: true, uniqueness: true
     validates :city, :state, :country, :pincode, :address_line_1, :address_line_2, presence: true
-    validate :MyValidator
-    #Not Working
-    # validates_with EmailValidator
+    # validate :email_validator
+    
+    #validator in other class
+    validates_with EmailValidator
+
+    def name
+        return "#{first_name} #{last_name}".strip
+    end
+
+    def full_address
+        return "#{address_line_1} #{city} #{state} #{country} #{pincode}".strip
+    end
 
     private
-    def MyValidator
+    def email_validator
         unless self.personal_email =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
             self.errors.add( :personal_email, "Not a valid Email")
         end
