@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get 'terms-and-conditions', to: "pages#terms_and_conditions"
 
   resources :employees
+  resources :documents
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
