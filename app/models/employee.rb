@@ -17,6 +17,10 @@ class Employee < ApplicationRecord
         return "#{address_line_1} #{city} #{state} #{country} #{pincode}".strip
     end
 
+    def name_with_email
+        return "#{name}(#{personal_email})".strip        
+    end
+
     private
     def email_validator
         unless self.personal_email =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
